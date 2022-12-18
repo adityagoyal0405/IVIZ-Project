@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>IVIZ Project</title>
+
+
+
+
+
+
+  <link  rel="stylesheet" type="text/css" href="style.css"  >
+
+  <script src="https://kit.fontawesome.com/bf1a9648ca.js" crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+<body>
+    <h1 class="heading1">Information Visualization Project</h1>
+    <p class="info1">Visual representation of the data of total tobacco users in total,Urban & Rural parts in different states of India.</p>
+    <button onclick="funLoad()" class="button">Load Data</button>
+		<div id="canvas"> </div>
+		<h2 class="heading">Dataset:</h2>
+    <p class="info">Dataset taken from <a href="https://www.data.gov.in/">here</a></p>
+    <h2 class="heading">Developed by:</h2>
+    <p class="names">Aditya Goyal     19UCC101</p>
+    <p class="names">Ayush Kabra      19UCS113</p>
+    <p class="names">Avik Maheshwari  19UCS138</p>
+    <h2 class="heading">Course Instructor:</h2>
+    <p class="names">Dr. Subrat Dash</p>
+    
+</body>
+<script>
+  function funLoad() {
+    d3.csv("datafile.csv").then(funDraw);
+  }
+  function funDraw(myData) {
+    console.log(myData);
+    var m = d3.max(myData, function(d) {return +d.Evertobaccousers});
+    console.log(m);
+    var scale = d3.scaleLinear().domain([0,m]).range([0,1500]);
+    d3.select("#canvas").selectAll("div").data(myData).enter()
+      .append("div")
+      .transition().duration(1000)
+      .text(function(d){return d.StateUT})
+      .style("background-color","#84EED5")
+      .style("color","black")
+      .style("margin","5px")
+      .style("font-family","Verdana, Geneva, Tahoma, sans-serif")
+      .style("width",function(d) {return scale(d.Evertobaccousers)+"px"})
+  }
+</script>
+
+</html>

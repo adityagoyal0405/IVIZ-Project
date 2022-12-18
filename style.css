@@ -1,0 +1,34 @@
+.heading1 {
+    margin-left: 35%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.heading{
+    margin-left: 45%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.names{
+    margin-left: 45%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.info1{
+    margin-left: 27%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.info{
+    margin-left: 45%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button{
+    margin-left: 46%;
+    background-color: #3ECAA9;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 15px 32px;
+    border-radius: 5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button:hover{
+    background-color: #0FA481;
+}
